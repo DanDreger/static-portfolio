@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Daniel Dreger — CMS Web Developer & Data Analyst</title>
-<meta name="description" content="Daniel Dreger — CMS web developer and data analyst. I build maintainable websites and turn data into decisions, with projects spanning machine learning, data visualization, and web apps." />
+<meta name="description" content="Daniel Dreger — CMS web developer and data analyst. I build maintainable websites and turn data into decisions, with work spanning live CMS sites, machine learning, and data visualization." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -45,7 +45,7 @@
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:.02em}
   .brand span{color:var(--accent)}
-  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links{display:flex;gap:26px;align-items:center}
   .nav-links a{color:var(--muted);font-size:14px;font-weight:500;transition:color .2s}
   .nav-links a:hover{color:var(--text)}
   .nav-cta{
@@ -55,7 +55,7 @@
   }
   .nav-cta:hover{background:var(--accent-soft)}
   .menu-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
-  @media(max-width:760px){
+  @media(max-width:860px){
     .nav-links{display:none}
     .menu-toggle{display:block}
   }
@@ -112,7 +112,7 @@
   .facts li b{color:var(--text);font-weight:600}
   .dot{color:var(--accent);flex-shrink:0}
 
-  /* PROJECTS */
+  /* CARDS / GRID */
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
   @media(max-width:760px){.grid{grid-template-columns:1fr}}
   .card{
@@ -137,6 +137,7 @@
   .card-links{display:flex;gap:16px;margin-top:18px}
   .card-links a{font-size:13.5px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
   .card-links a:hover{text-decoration:underline}
+  .subhead{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:8px 0 22px}
 
   /* SKILLS */
   .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
@@ -146,6 +147,7 @@
   .skillcard h3 .ic{color:var(--accent)}
   .chips{display:flex;flex-wrap:wrap;gap:9px}
   .chip{font-size:13px;color:#d4e0f1;background:var(--bg-soft);border:1px solid var(--line);padding:6px 12px;border-radius:8px}
+  .chip.hi{color:#04201d;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-color:transparent;font-weight:600}
 
   /* CONTACT */
   .contact{text-align:center}
@@ -168,6 +170,7 @@
     <a class="brand" href="#top">Daniel<span>Dreger</span></a>
     <nav class="nav-links">
       <a href="#about">About</a>
+      <a href="#education">Education</a>
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -184,15 +187,15 @@
     <div class="wrap">
       <span class="eyebrow reveal">● Available for new opportunities</span>
       <h1 class="reveal">I build <span class="grad">maintainable websites</span> and turn <span class="grad">data into decisions.</span></h1>
-      <p class="lead reveal">I'm Daniel Dreger — a CMS web developer and data analyst based in Evergreen, Colorado. I help teams ship sites that are fast to update and easy to maintain, and I dig into data to find the story that drives the next move.</p>
+      <p class="lead reveal">I'm Daniel Dreger — a CMS web developer and data analyst based in Evergreen, Colorado. I've built and maintained CMS-driven sites for companies like Modern Health, Optum, Rally Health, and Ossia — and I dig into data to find the story that drives the next move.</p>
       <div class="hero-cta reveal">
         <a class="btn btn-primary" href="#work">View my work →</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
       <div class="hero-stats reveal">
-        <div class="stat"><div class="num">15+</div><div class="lbl">Data & web projects</div></div>
+        <div class="stat"><div class="num">4+</div><div class="lbl">Companies' sites built &amp; maintained</div></div>
         <div class="stat"><div class="num">UC Berkeley</div><div class="lbl">Data Analytics certified</div></div>
-        <div class="stat"><div class="num">Python · JS · SQL</div><div class="lbl">Core toolkit</div></div>
+        <div class="stat"><div class="num">CMS · Python · JS</div><div class="lbl">Core toolkit</div></div>
       </div>
     </div>
   </section>
@@ -206,7 +209,7 @@
       </div>
       <div class="about-grid">
         <div class="reveal">
-          <p>If a company website is a bottleneck — slow to update, hard to maintain, or fighting the people who use it — that's the problem I like to solve. I focus on <strong>content management systems and front-end work</strong> that put control back in the hands of the team, so the site keeps moving without an engineer in the loop for every change.</p>
+          <p>If a company website is a bottleneck — slow to update, hard to maintain, or fighting the people who use it — that's the problem I like to solve. I focus on <strong>content management systems and front-end work</strong> that put control back in the hands of the team, so the site keeps moving without an engineer in the loop for every change. I've done that across CMS platforms including <strong>WordPress, Webflow, HubSpot, and Craft CMS</strong>.</p>
           <p>The other half of my work is <strong>data analysis</strong>. After completing UC Berkeley's data analytics program (Python, Pandas, SQL, Postgres, Spark, machine learning, and Tableau), I built a series of end-to-end projects — from predictive models to interactive dashboards — that take a messy question and end at a clear, defensible answer.</p>
           <p>Before tech, I spent years as an <strong>NCAA and championship-level hockey referee</strong> — making fast, accountable decisions under pressure with no replay. It's a strange line on a résumé, but it's exactly the temperament I bring to debugging, deadlines, and shipping.</p>
           <p>Right now I'm looking for a role where I can do both: build and maintain the web presence, and use data to make it measurably better.</p>
@@ -216,11 +219,38 @@
           <ul>
             <li><span class="dot">▹</span><span><b>Based in</b> Evergreen, Colorado · Remote-friendly</span></li>
             <li><span class="dot">▹</span><span><b>Focus</b> CMS / front-end development &amp; data analysis</span></li>
-            <li><span class="dot">▹</span><span><b>Education</b> UC Berkeley Data Analytics certificate</span></li>
+            <li><span class="dot">▹</span><span><b>Education</b> Colorado College (BA) · UC Berkeley (Data Analytics)</span></li>
             <li><span class="dot">▹</span><span><b>Certified in</b> Google Analytics &amp; Google Tag Manager</span></li>
             <li><span class="dot">▹</span><span><b>Currently</b> Modern Health (remote)</span></li>
           </ul>
         </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-tag">Education</div>
+        <h2>Where I trained.</h2>
+      </div>
+      <div class="grid">
+        <article class="card reveal">
+          <div class="ptype">Undergraduate</div>
+          <h3>Colorado College</h3>
+          <p>Bachelor of Arts.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ptype">Web Development</div>
+          <h3>Codify Academy</h3>
+          <p>Front-End Web Development program — modern HTML, CSS, JavaScript, and responsive build practices.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ptype">Data Analytics</div>
+          <h3>UC Berkeley</h3>
+          <p>Data Analytics certificate — Python, Pandas, SQL, Postgres, Spark, machine learning, and Tableau. Served as team and project lead.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -230,9 +260,48 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="sec-tag">Selected Work</div>
-        <h2>Projects across data, visualization, and the web.</h2>
-        <p>A sample of recent work. Each project links to source on GitHub — many are end-to-end, from raw data to a working model or interface.</p>
+        <h2>Live CMS sites and end-to-end data projects.</h2>
+        <p>Professional web work links out to the live sites; data and machine-learning projects link to source on GitHub.</p>
       </div>
+
+      <div class="subhead reveal">Web Development &amp; CMS</div>
+      <div class="grid">
+
+        <article class="card reveal">
+          <div class="ptype">CMS · Web Development</div>
+          <h3>Modern Health</h3>
+          <p>Web development and CMS work for Modern Health, a mental-health benefits platform for employers — building and maintaining the public web presence.</p>
+          <div class="tags"><span class="tag">CMS</span><span class="tag">Front-End</span><span class="tag">Responsive</span><span class="tag">Analytics</span></div>
+          <div class="card-links"><a href="https://www.modernhealth.com/" target="_blank" rel="noopener">View site ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">CMS · Web Development</div>
+          <h3>Optum</h3>
+          <p>Web development and CMS work across Optum's digital health properties, part of UnitedHealth Group — content delivery at enterprise scale.</p>
+          <div class="tags"><span class="tag">CMS</span><span class="tag">Front-End</span><span class="tag">Enterprise</span><span class="tag">Web Development</span></div>
+          <div class="card-links"><a href="https://www.optum.com/" target="_blank" rel="noopener">View site ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">CMS · Web Development</div>
+          <h3>Rally Health</h3>
+          <p>Front-end and CMS development for Rally Health's consumer wellness and engagement platform (now part of Optum).</p>
+          <div class="tags"><span class="tag">CMS</span><span class="tag">Front-End</span><span class="tag">Responsive</span><span class="tag">Web Development</span></div>
+          <div class="card-links"><a href="https://www.rallyhealth.com/" target="_blank" rel="noopener">View site ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">CMS · Web Development</div>
+          <h3>Ossia</h3>
+          <p>Web and CMS development for Ossia, the wireless-power technology company behind Cota® — marketing site build and ongoing maintenance.</p>
+          <div class="tags"><span class="tag">CMS</span><span class="tag">Front-End</span><span class="tag">Marketing Site</span><span class="tag">Web Development</span></div>
+          <div class="card-links"><a href="https://www.ossia.com/" target="_blank" rel="noopener">View site ↗</a></div>
+        </article>
+
+      </div>
+
+      <div class="subhead reveal" style="margin-top:40px">Data &amp; Machine Learning</div>
       <div class="grid">
 
         <article class="card reveal">
@@ -267,23 +336,8 @@
           <div class="card-links"><a href="https://github.com/DanDreger/CryptoClustering" target="_blank" rel="noopener">View code ↗</a></div>
         </article>
 
-        <article class="card reveal">
-          <div class="ptype">Web App</div>
-          <h3>Player Performance Tracker</h3>
-          <p>A web application for tracking player performance over time, backed by Firebase for real-time data storage and authentication.</p>
-          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Firebase</span><span class="tag">HTML / CSS</span><span class="tag">Web App</span></div>
-          <div class="card-links"><a href="https://github.com/DanDreger/player_tracker" target="_blank" rel="noopener">View code ↗</a></div>
-        </article>
-
-        <article class="card reveal">
-          <div class="ptype">Data Analysis</div>
-          <h3>NFL Spending Analysis</h3>
-          <p>An analysis of NFL team salaries to find the spending patterns that actually correlate with on-field success — separating signal from expensive noise.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">EDA</span></div>
-          <div class="card-links"><a href="https://github.com/DanDreger/NFL_Spending_Analysis" target="_blank" rel="noopener">View code ↗</a></div>
-        </article>
-
       </div>
+
       <div style="text-align:center;margin-top:40px" class="reveal">
         <a class="btn btn-ghost" href="https://github.com/DanDreger" target="_blank" rel="noopener">See all projects on GitHub ↗</a>
       </div>
@@ -299,12 +353,12 @@
       </div>
       <div class="skills-grid">
         <div class="skillcard reveal">
-          <h3><span class="ic">◆</span> Data &amp; Analytics</h3>
+          <h3><span class="ic">◆</span> CMS &amp; Web Platforms</h3>
           <div class="chips">
-            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
-            <span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span>
-            <span class="chip">SparkSQL</span><span class="chip">scikit-learn</span><span class="chip">TensorFlow / Keras</span>
-            <span class="chip">Tableau</span><span class="chip">Excel / VBA</span>
+            <span class="chip hi">WordPress</span><span class="chip hi">Webflow</span>
+            <span class="chip hi">HubSpot</span><span class="chip hi">Craft CMS</span>
+            <span class="chip">Google Analytics</span><span class="chip">Google Tag Manager</span>
+            <span class="chip">SEO fundamentals</span><span class="chip">Web design workflow</span>
           </div>
         </div>
         <div class="skillcard reveal">
@@ -316,11 +370,12 @@
           </div>
         </div>
         <div class="skillcard reveal">
-          <h3><span class="ic">◆</span> CMS &amp; Marketing</h3>
+          <h3><span class="ic">◆</span> Data &amp; Analytics</h3>
           <div class="chips">
-            <span class="chip">Content Management Systems</span><span class="chip">Google Analytics</span>
-            <span class="chip">Google Tag Manager</span><span class="chip">SEO fundamentals</span>
-            <span class="chip">Web design workflow</span>
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+            <span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span>
+            <span class="chip">SparkSQL</span><span class="chip">scikit-learn</span><span class="chip">TensorFlow / Keras</span>
+            <span class="chip">Tableau</span><span class="chip">Excel / VBA</span>
           </div>
         </div>
         <div class="skillcard reveal">
@@ -368,7 +423,7 @@
   });
   // Close mobile menu on link click
   document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
-    if(window.innerWidth<=760){ document.querySelector('.nav-links').style.display='none'; }
+    if(window.innerWidth<=860){ document.querySelector('.nav-links').style.display='none'; }
   }));
 </script>
 </body>
