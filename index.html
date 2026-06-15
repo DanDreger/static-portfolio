@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daniel Dreger — CMS Web Developer & Data Analyst</title>
+<meta name="description" content="Daniel Dreger — CMS web developer and data analyst. I build maintainable websites and turn data into decisions, with projects spanning machine learning, data visualization, and web apps." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0b1120;
+    --bg-soft:#0f172a;
+    --card:#111c34;
+    --line:#1e2c4a;
+    --text:#e6edf7;
+    --muted:#9bb0cf;
+    --accent:#2dd4bf;
+    --accent-2:#38bdf8;
+    --accent-soft:rgba(45,212,191,.12);
+    --radius:16px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Space Grotesk','Inter',sans-serif;line-height:1.15;letter-spacing:-.01em}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(11,17,32,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:.02em}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--muted);font-size:14px;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{
+    border:1px solid var(--accent);color:var(--accent);
+    padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;
+    transition:all .2s;
+  }
+  .nav-cta:hover{background:var(--accent-soft)}
+  .menu-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .menu-toggle{display:block}
+  }
+
+  /* HERO */
+  .hero{position:relative;padding:96px 0 72px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(800px 400px at 75% 0%,rgba(56,189,248,.14),transparent 60%),
+               radial-gradient(700px 400px at 10% 30%,rgba(45,212,191,.12),transparent 55%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--accent);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--accent-soft);border:1px solid rgba(45,212,191,.25);
+    padding:6px 14px;border-radius:999px;margin-bottom:24px;
+  }
+  .hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;max-width:18ch}
+  .hero h1 .grad{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero p.lead{margin-top:22px;font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:60ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;transition:all .2s;
+  }
+  .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#04201d}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(45,212,191,.5)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:54px}
+  .stat .num{font-family:'Space Grotesk';font-size:28px;font-weight:700;color:var(--text)}
+  .stat .lbl{font-size:13px;color:var(--muted);letter-spacing:.04em}
+
+  /* SECTION */
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:44px}
+  .sec-tag{color:var(--accent);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:700;margin-top:10px}
+  .sec-head p{color:var(--muted);margin-top:12px;max-width:62ch}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:48px;align-items:start}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:32px}}
+  .about-grid p{color:#c4d2e8;margin-bottom:18px}
+  .about-grid p strong{color:var(--text)}
+  .facts{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .facts h3{font-size:16px;margin-bottom:16px}
+  .facts ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .facts li{display:flex;gap:12px;font-size:14px;color:var(--muted)}
+  .facts li b{color:var(--text);font-weight:600}
+  .dot{color:var(--accent);flex-shrink:0}
+
+  /* PROJECTS */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;transition:all .25s;position:relative;overflow:hidden;
+  }
+  .card::after{
+    content:"";position:absolute;inset:0;border-radius:var(--radius);
+    background:linear-gradient(120deg,transparent,rgba(45,212,191,.06));
+    opacity:0;transition:opacity .25s;pointer-events:none;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(45,212,191,.4)}
+  .card:hover::after{opacity:1}
+  .card .ptype{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .card h3{font-size:20px;margin:10px 0 10px}
+  .card p{color:var(--muted);font-size:14.5px;flex-grow:1}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .tag{
+    font-size:12px;color:#bfe9e2;background:var(--accent-soft);
+    border:1px solid rgba(45,212,191,.22);padding:4px 10px;border-radius:999px;
+  }
+  .card-links{display:flex;gap:16px;margin-top:18px}
+  .card-links a{font-size:13.5px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+  .card-links a:hover{text-decoration:underline}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  @media(max-width:760px){.skills-grid{grid-template-columns:1fr}}
+  .skillcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .skillcard h3{font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .skillcard h3 .ic{color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-size:13px;color:#d4e0f1;background:var(--bg-soft);border:1px solid var(--line);padding:6px 12px;border-radius:8px}
+
+  /* CONTACT */
+  .contact{text-align:center}
+  .contact h2{font-size:clamp(28px,5vw,44px)}
+  .contact p{color:var(--muted);max-width:54ch;margin:16px auto 0}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;text-align:center;color:var(--muted);font-size:13.5px}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Daniel<span>Dreger</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display = (getComputedStyle(document.querySelector('.nav-links')).display==='none'?'flex':'none')">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:0">
+    <div class="wrap">
+      <span class="eyebrow reveal">● Available for new opportunities</span>
+      <h1 class="reveal">I build <span class="grad">maintainable websites</span> and turn <span class="grad">data into decisions.</span></h1>
+      <p class="lead reveal">I'm Daniel Dreger — a CMS web developer and data analyst based in Evergreen, Colorado. I help teams ship sites that are fast to update and easy to maintain, and I dig into data to find the story that drives the next move.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#work">View my work →</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><div class="num">15+</div><div class="lbl">Data & web projects</div></div>
+        <div class="stat"><div class="num">UC Berkeley</div><div class="lbl">Data Analytics certified</div></div>
+        <div class="stat"><div class="num">Python · JS · SQL</div><div class="lbl">Core toolkit</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-tag">About</div>
+        <h2>Two skill sets, one goal: useful things that ship.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>If a company website is a bottleneck — slow to update, hard to maintain, or fighting the people who use it — that's the problem I like to solve. I focus on <strong>content management systems and front-end work</strong> that put control back in the hands of the team, so the site keeps moving without an engineer in the loop for every change.</p>
+          <p>The other half of my work is <strong>data analysis</strong>. After completing UC Berkeley's data analytics program (Python, Pandas, SQL, Postgres, Spark, machine learning, and Tableau), I built a series of end-to-end projects — from predictive models to interactive dashboards — that take a messy question and end at a clear, defensible answer.</p>
+          <p>Before tech, I spent years as an <strong>NCAA and championship-level hockey referee</strong> — making fast, accountable decisions under pressure with no replay. It's a strange line on a résumé, but it's exactly the temperament I bring to debugging, deadlines, and shipping.</p>
+          <p>Right now I'm looking for a role where I can do both: build and maintain the web presence, and use data to make it measurably better.</p>
+        </div>
+        <aside class="facts reveal">
+          <h3>At a glance</h3>
+          <ul>
+            <li><span class="dot">▹</span><span><b>Based in</b> Evergreen, Colorado · Remote-friendly</span></li>
+            <li><span class="dot">▹</span><span><b>Focus</b> CMS / front-end development &amp; data analysis</span></li>
+            <li><span class="dot">▹</span><span><b>Education</b> UC Berkeley Data Analytics certificate</span></li>
+            <li><span class="dot">▹</span><span><b>Certified in</b> Google Analytics &amp; Google Tag Manager</span></li>
+            <li><span class="dot">▹</span><span><b>Currently</b> Modern Health (remote)</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-tag">Selected Work</div>
+        <h2>Projects across data, visualization, and the web.</h2>
+        <p>A sample of recent work. Each project links to source on GitHub — many are end-to-end, from raw data to a working model or interface.</p>
+      </div>
+      <div class="grid">
+
+        <article class="card reveal">
+          <div class="ptype">Machine Learning</div>
+          <h3>NBA Game Outcome Predictor</h3>
+          <p>A machine-learning model that predicts the winners of NBA games from historical performance data, served through a lightweight web app.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Keras</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span></div>
+          <div class="card-links"><a href="https://github.com/DanDreger/NBA_Winners" target="_blank" rel="noopener">View code ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">Deep Learning</div>
+          <h3>Non-Profit Funding Success Model</h3>
+          <p>A deep neural network that helps a nonprofit identify which funding applicants are most likely to succeed, improving how limited dollars get allocated.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow / Keras</span><span class="tag">Pandas</span><span class="tag">Neural Networks</span></div>
+          <div class="card-links"><a href="https://github.com/DanDreger/Deep-Neural-Network-Learning-for-Non-Profit-Funding" target="_blank" rel="noopener">View code ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">Data Visualization</div>
+          <h3>Global Earthquake Map</h3>
+          <p>An interactive map visualizing live USGS earthquake data — color and size encode depth and magnitude so patterns are readable at a glance.</p>
+          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Leaflet</span><span class="tag">D3</span><span class="tag">GeoJSON</span><span class="tag">USGS API</span></div>
+          <div class="card-links"><a href="https://github.com/DanDreger/Earthquake_Visualization_Leaflet" target="_blank" rel="noopener">View code ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">Unsupervised ML</div>
+          <h3>Crypto Clustering</h3>
+          <p>Used unsupervised learning to group cryptocurrencies by how they respond to 24-hour and 7-day price changes, with PCA to make the clusters interpretable.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">K-Means</span><span class="tag">PCA</span></div>
+          <div class="card-links"><a href="https://github.com/DanDreger/CryptoClustering" target="_blank" rel="noopener">View code ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">Web App</div>
+          <h3>Player Performance Tracker</h3>
+          <p>A web application for tracking player performance over time, backed by Firebase for real-time data storage and authentication.</p>
+          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Firebase</span><span class="tag">HTML / CSS</span><span class="tag">Web App</span></div>
+          <div class="card-links"><a href="https://github.com/DanDreger/player_tracker" target="_blank" rel="noopener">View code ↗</a></div>
+        </article>
+
+        <article class="card reveal">
+          <div class="ptype">Data Analysis</div>
+          <h3>NFL Spending Analysis</h3>
+          <p>An analysis of NFL team salaries to find the spending patterns that actually correlate with on-field success — separating signal from expensive noise.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">EDA</span></div>
+          <div class="card-links"><a href="https://github.com/DanDreger/NFL_Spending_Analysis" target="_blank" rel="noopener">View code ↗</a></div>
+        </article>
+
+      </div>
+      <div style="text-align:center;margin-top:40px" class="reveal">
+        <a class="btn btn-ghost" href="https://github.com/DanDreger" target="_blank" rel="noopener">See all projects on GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-tag">Toolkit</div>
+        <h2>What I work with.</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skillcard reveal">
+          <h3><span class="ic">◆</span> Data &amp; Analytics</h3>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+            <span class="chip">SQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span>
+            <span class="chip">SparkSQL</span><span class="chip">scikit-learn</span><span class="chip">TensorFlow / Keras</span>
+            <span class="chip">Tableau</span><span class="chip">Excel / VBA</span>
+          </div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="ic">◆</span> Web Development</h3>
+          <div class="chips">
+            <span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">HTML5</span>
+            <span class="chip">CSS3</span><span class="chip">Firebase</span><span class="chip">REST APIs</span>
+            <span class="chip">Leaflet</span><span class="chip">D3.js</span><span class="chip">Flask</span>
+          </div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="ic">◆</span> CMS &amp; Marketing</h3>
+          <div class="chips">
+            <span class="chip">Content Management Systems</span><span class="chip">Google Analytics</span>
+            <span class="chip">Google Tag Manager</span><span class="chip">SEO fundamentals</span>
+            <span class="chip">Web design workflow</span>
+          </div>
+        </div>
+        <div class="skillcard reveal">
+          <h3><span class="ic">◆</span> Tools &amp; Workflow</h3>
+          <div class="chips">
+            <span class="chip">Git &amp; GitHub</span><span class="chip">Jupyter</span><span class="chip">ETL pipelines</span>
+            <span class="chip">Data visualization</span><span class="chip">Machine learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="sec-tag">Contact</div>
+        <h2>Let's build something.</h2>
+        <p>I'm open to CMS / web development and data analyst roles. The fastest way to reach me is email — I'll get back to you quickly.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:danjdreger@gmail.com">✉ danjdreger@gmail.com</a>
+          <a class="btn btn-ghost" href="https://github.com/DanDreger" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/daniel-dreger-b0515718" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Daniel Dreger · Built with HTML, CSS &amp; a little JavaScript.</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay = (Math.min(i,6)*60)+'ms';
+    io.observe(el);
+  });
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+    if(window.innerWidth<=760){ document.querySelector('.nav-links').style.display='none'; }
+  }));
+</script>
+</body>
+</html>
